@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <navigation xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/mobile_navigation"
+        app:startDestination="@+id/navigation_home">
+
+        <fragment
+            android:id="@+id/navigation_home"
+            android:name="com.example.students.ui.home.HomeFragment"
+            android:label="@string/title_home"
+            tools:layout="@layout/fragment_home" >
+            <action
+                android:id="@+id/action_navigation_home_to_loginFragment"
+                app:destination="@id/loginFragment" />
+            <action
+                android:id="@+id/action_navigation_home_to_profileFragment"
+                app:destination="@id/profile_navigation" />
+            <action
+                android:id="@+id/action_navigation_home_to_registrationFragment"
+                app:destination="@id/registrationFragment" />
+        </fragment>
+    <fragment
+        android:id="@+id/feedback_navigation"
+        android:name="com.example.students.FeedbackFragment"
+        android:label="feedback"
+        tools:layout="@layout/fragment_feedback" >
+
+
+        <action
+            android:id="@+id/action_navigation_home_to_profile_navigation"
+            app:destination="@id/profile_navigation" />
+    </fragment>
+        <fragment
+            android:id="@+id/teach_navigation"
+            android:name="com.example.students.ui.teachers.TeacherFragment"
+            android:label="@string/title_dashboard"
+            tools:layout="@layout/fragment_teachers" >
+            <action
+                android:id="@+id/action_teach_navigation_to_descriptionFragment"
+                app:destination="@id/descriptionFragment" />
+        </fragment>
+
+        <fragment
+            android:id="@+id/people_navigation"
+            android:name="com.example.students.ui.facts.PeopleFragment"
+            android:label="@string/title_notifications"
+            tools:layout="@layout/fragment_people" />
+        <fragment
+            android:id="@+id/loginFragment"
+            android:name="com.example.students.LoginFragment"
+            android:label="fragment_login"
+            tools:layout="@layout/fragment_login" >
+            <action
+                android:id="@+id/action_loginFragment_to_navigation_home"
+                app:destination="@id/navigation_home" />
+            <action
+                android:id="@+id/action_loginFragment_to_profile_navigation"
+                app:destination="@id/profile_navigation" />
+            <action
+                android:id="@+id/action_loginFragment_to_registrationFragment"
+                app:destination="@id/registrationFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/profile_navigation"
+            android:name="com.example.students.ui.profile.ProfileFragment"
+            android:label="ProfileFragment" >
+            <action
+                android:id="@+id/action_profile_navigation_to_loginFragment"
+                app:destination="@id/loginFragment" />
+            <action
+                android:id="@+id/action_profile_navigation_to_registrationFragment"
+                app:destination="@id/registrationFragment" />
+            <action
+                android:id="@+id/action_profile_navigation_to_navigation_home2"
+                app:destination="@id/navigation_home" />
+            <action
+                android:id="@+id/action_profile_navigation_to_navigation_home3"
+                app:destination="@id/navigation_home" />
+            <action
+                android:id="@+id/action_profile_navigation_to_navigation_home4"
+                app:destination="@id/navigation_home" />
+            <action
+                android:id="@+id/action_profile_navigation_to_feedback_navigation"
+                app:destination="@id/feedback_navigation" />
+        </fragment>
+
+        <fragment
+            android:id="@+id/registrationFragment"
+            android:name="com.example.students.RegistrationFragment"
+            android:label="fragment_registration"
+            tools:layout="@layout/fragment_registration" >
+            <action
+                android:id="@+id/action_registrationFragment_to_navigation_home"
+                app:destination="@id/navigation_home" />
+            <action
+                android:id="@+id/action_registrationFragment_to_loginFragment"
+                app:destination="@id/loginFragment" />
+            <action
+                android:id="@+id/action_registrationFragment_to_profile_navigation"
+                app:destination="@id/profile_navigation" />
+        </fragment>
+    <fragment
+        android:id="@+id/descriptionFragment"
+        android:name="com.example.students.description.DescriptionFragment"
+        android:label="fragment_description"
+        tools:layout="@layout/fragment_description" >
+        <action
+            android:id="@+id/action_descriptionFragment_to_teach_navigation"
+            app:destination="@id/teach_navigation" />
+    </fragment>
+</navigation>
